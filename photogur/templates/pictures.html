@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to the Pictures Page</h1>
+    <!-- {% for url in pictures_images %}
+      <img src="{{ url }}" alt="a random placeholder image">
+      <img src="{{ url }}" alt="a random placeholder image">
+    {% endfor %} -->
+    <!-- <ul> -->
+    {% for picture in pictures %}
+    <a href="{% url 'picture_details' id=picture.pk %}">
+        <li><img src="{{ picture.url }}" /></li>
+    </a>
+    {% endfor %}
+    <!-- </ul> -->
+</body>
+</html>
